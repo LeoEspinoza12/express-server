@@ -110,8 +110,8 @@ app.post('/index/send', (req, res) => {
 
 
   var mailOptions = {
-    from: 'Aiman Adlawan <>',
-    to: 'aiman.adlawan@yahoo.com',
+    from: 'manski <>',
+    to: '',
     subject: 'Website Submission',
     text: `You have a submission with the following details... Name: ${name} Email: ${email}Message: ${message}`,
     html: `<p>You have a submission with the following details...</p><ul><li>Name: ${name}</li><li>Email: ${email}</li><li>Message: ${message}</li></ul>`

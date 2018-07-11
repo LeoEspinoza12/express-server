@@ -1,6 +1,43 @@
 extends layout
 
-block content
- h1 About Us
- p
-  | This is the about page
+block links
+  ul.nav.navbar-nav
+    li
+      a(href='/') Home
+    li.active
+      a(href='/about') About
+    li
+      a(href='/contact') Contact
+
+block content 
+  .jumbotron
+  h1.display-4 Welcome to #{one}!
+  p.lead
+    | This page is all about the enrollment for college.
+  hr.my-4
+  p
+    | If you have finished highschool you can get enrolled here.
+  p.lead
+    a.btn.btn-primary.btn-sm(href='#', role='button') Learn more
+  br
+  br
+  .container  
+    form(method='post', action='about/send')
+      h1 #{two}
+      .form-group
+        label Name
+        input.form-control(type='text',
+        name='name', placeholder='Enter Name')
+      .form-group 
+        label Email
+        input.form-control(type='email'
+        name='email', placeholder='Enter Email')
+      .form-group 
+        label Course
+        input.form-control(type='text'
+        name='course', placeholder='Enter your course')
+      .form-group
+        label Application Letter
+        textarea.form-control(name='message',
+        placeholder='Enter Message')
+      button.btn.btn-primary(type='submit') Submit

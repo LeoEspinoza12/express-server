@@ -28,13 +28,27 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', (req, res)=>{
   // then in this part we will user render method to tell node that we 
   // want to render the url by this file
-  res.render('index')
+
+  // you can also pass in an object with value and it will be received in the jade file
+  res.render('index', {one: 'One', two: 'Two', three: 'three'})
 })
 
-app.get('/layout', (req, res) => {
+app.get('/about', (req, res) => {
   // then in this part we will user render method to tell node that we 
   // want to render the url by this file
-  res.render('layout')
+  res.render('about')
+})
+
+app.get('/contact', (req, res) => {
+  // then in this part we will user render method to tell node that we 
+  // want to render the url by this file
+  res.render('contact')
+})
+
+app.post('/contact/send', (req, res) => {
+  // then in this part we will user render method to tell node that we 
+  // want to render the url by this file
+  console.log('the request has been sent')
 })
 
 app.listen(port, ()=>{
